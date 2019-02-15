@@ -1,0 +1,2634 @@
+--Starting up.
+--Command line: /home/onkar/Downloads/SMTSIM/SMTSIM/build.linux-amd64/smtsim -conffile /home/onkar/Downloads/SMTSIM/benchmarks/workloads-list_ffs0.conf -confexpr 'Syscall/root_paths_at_cwd = t;' -confexpr 'Syscall/ForceUniqueNames = { "fort.11"; };' -confexpr 'AppStatsLog/enable = t;' -confexpr 'AppStatsLog/interval = 10e3;' -confexpr 'AppStatsLog/base_name = "/home/onkar/Downloads/SMTSIM/results/Project/crafty15";' -confexpr 'AppStatsLog/stat_mask/all = f;' -confexpr 'AppStatsLog/stat_mask/cyc = t;' -confexpr 'AppStatsLog/stat_mask/commits = t;' -confexpr 'AppStatsLog/stat_mask/l3cache_hr = t;' -confexpr 'AppStatsLog/stat_mask/mem_delay = t;' -confexpr 'AppStatsLog/stat_mask/itlb_acc = t;' -confexpr 'AppStatsLog/stat_mask/dtlb_acc = t;' -confexpr 'AppStatsLog/stat_mask/icache_acc = t;' -confexpr 'AppStatsLog/stat_mask/dcache_acc = t;' -confexpr 'AppStatsLog/stat_mask/l2cache_acc = t;' -confexpr 'AppStatsLog/stat_mask/l3cache_acc = t;' -confexpr 'AppStatsLog/stat_mask/bpred_acc = t;' -confexpr 'AppStatsLog/stat_mask/fpalu_acc = t;' -confexpr 'AppStatsLog/stat_mask/intalu_acc = t;' -confexpr 'AppStatsLog/stat_mask/ldst_acc = t;' -confexpr 'AppStatsLog/stat_mask/lsq_acc = t;' -confexpr 'AppStatsLog/stat_mask/iq_acc = t;' -confexpr 'AppStatsLog/stat_mask/fq_acc = t;' -confexpr 'AppStatsLog/stat_mask/ireg_acc = t;' -confexpr 'AppStatsLog/stat_mask/freg_acc = t;' -confexpr 'AppStatsLog/stat_mask/iren_acc = t;' -confexpr 'AppStatsLog/stat_mask/fren_acc = t;' -confexpr 'AppStatsLog/stat_mask/rob_acc = t;' -confexpr 'AppStatsLog/stat_mask/lsq_occ = t;' -confexpr 'AppStatsLog/stat_mask/iq_occ = t;' -confexpr 'AppStatsLog/stat_mask/fq_occ = t;' -confexpr 'AppStatsLog/stat_mask/ireg_occ = t;' -confexpr 'AppStatsLog/stat_mask/freg_occ = t;' -confexpr 'AppStatsLog/stat_mask/iren_occ = t;' -confexpr 'AppStatsLog/stat_mask/fren_occ = t;' -confexpr 'AppStatsLog/stat_mask/rob_occ = t;' -confexpr 'Workloads/crafty/ff_dist = 1.000000e+07;' -confexpr 'WorkQueue/Jobs/job_1 = { start_time = 0.; workload = "crafty"};' -confexpr 'WorkQueue/max_running_jobs = 1;' -confexpr 'Global/thread_length = 1.000000e+07;' -confexpr 'Global/num_cores = 1;' -confexpr 'Global/num_contexts = 1;' -confexpr 'Global/ThreadCoreMap/t0 = 0;' -confexpr 'Global/Mem/private_l2caches = t;' -confexpr 'Global/Mem/L2Cache/size_kb = 256;' -confexpr 'Global/Mem/L2Cache/assoc = 8;' -confexpr 'Global/Mem/L2Cache/access_time = { latency = 10; interval = 2; };' -confexpr 'Global/Mem/L2Cache/access_time_wb = { latency = 10; interval = 2; };' -confexpr 'Global/Mem/use_l3cache = t;' -confexpr 'Global/Mem/L3Cache/size_kb = 4096;' -confexpr 'Global/Mem/L3Cache/assoc = 16;' -confexpr 'Global/Mem/L3Cache/access_time = { latency = 20; interval = 8; };' -confexpr 'Global/Mem/L3Cache/access_time_wb = { latency = 20; interval = 8; };' -confexpr 'Global/Mem/MainMem/read_time = { latency = 250; interval = 100; };' -confexpr 'Global/Mem/MainMem/write_time = { latency = 250; interval = 100; };' -confexpr 'Core/ICache/size_kb = 64;' -confexpr 'Core/ICache/assoc = 2;' -confexpr 'Core/ICache/access_time = { latency = 2; interval = latency; };' -confexpr 'Core/ICache/access_time_wb = { latency = 3; interval = latency; };' -confexpr 'Core/DCache/size_kb = 64;' -confexpr 'Core/DCache/assoc = 2;' -confexpr 'Core/DCache/access_time = { latency = 2; interval = latency; };' -confexpr 'Core/DCache/access_time_wb = { latency = 3; interval = latency; };' -confexpr 'Core/loadstore_queue_size = 24;' -confexpr 'Core/Queue/int_queue_size = 32;' -confexpr 'Core/Queue/float_queue_size = 32;' -confexpr 'Core/Fetch/single_limit = 8;' -confexpr 'Core/Fetch/total_limit = 8;' -confexpr 'Core/Commit/single_limit = 4;' -confexpr 'Core/Commit/total_limit = 4;' -confexpr 'Core/Queue/max_int_issue = 2;' -confexpr 'Core/Queue/max_float_issue = 1;' -confexpr 'Core/Queue/max_ldst_issue = 1;' -confexpr 'Core/Rename/int_rename_regs = 64;' -confexpr 'Core/Rename/float_rename_regs = 64;' -confexpr 'Thread/reorder_buffer_size = 64;' -confexpr 'Thread/active_list_size = 512;' -confexpr 'ResourcePooling/enable = f;' -confdump -
+--Host: Onkar-virtual-machine, pid: 3020
+--Working directory: /home/onkar/Downloads/SMTSIM/benchmarks
+--Local time: Wed May 10 06:34:06 2017
+--Unix time: 1494412446
+--Note: DEBUG support was compiled in.  Assertions are enabled.
+--Loading built-in configuration.
+Loading config file "/home/onkar/Downloads/SMTSIM/benchmarks/workloads-list_ffs0.conf"...
+Writing config file "-"...
+--------
+AppStatsLog = {
+  base_name = "/home/onkar/Downloads/SMTSIM/results/Project/crafty15";
+  enable = t;
+  interval = 10000.;
+  stat_mask = {
+    all = f;
+    app_insts_committed = f;
+    bpred_acc = t;
+    bpred_hr = f;
+    commits = t;
+    cyc = t;
+    dcache_acc = t;
+    dcache_blocks = f;
+    dcache_hr = f;
+    dtlb_acc = t;
+    dtlb_hr = f;
+    fpalu_acc = t;
+    fq_acc = t;
+    fq_occ = t;
+    freg_acc = t;
+    freg_occ = t;
+    fren_acc = t;
+    fren_occ = t;
+    icache_acc = t;
+    icache_blocks = f;
+    icache_hr = f;
+    intalu_acc = t;
+    iq_acc = t;
+    iq_conf = f;
+    iq_occ = t;
+    ireg_acc = t;
+    ireg_occ = t;
+    iren_acc = t;
+    iren_occ = t;
+    itlb_acc = t;
+    itlb_hr = f;
+    l2cache_acc = t;
+    l2cache_blocks = f;
+    l2cache_hr = f;
+    l3cache_acc = t;
+    l3cache_blocks = f;
+    l3cache_hr = t;
+    ldst_acc = t;
+    long_mem_detects = f;
+    long_mem_flushes = f;
+    lsq_acc = t;
+    lsq_occ = t;
+    mem_commits = f;
+    mem_delay = t;
+    retpred_hr = f;
+    rob_acc = t;
+    rob_occ = t;
+    sched_count = f;
+    sched_cyc = f;
+  };
+};
+BasicBlockTracker = {
+  create_bbv_file = f;
+  filename = "";
+  interval = 2e+08;
+};
+Core = {
+  Commit = {
+    single_limit = 4;
+    thread_count_limit = 2;
+    total_limit = 4;
+  };
+  DCache = {
+    access_time = {
+      interval = 2;
+      latency = 2;
+    };
+    access_time_wb = {
+      interval = 3;
+      latency = 3;
+    };
+    assoc = 2;
+    fill_time = {
+      interval = 2;
+      latency = 2;
+    };
+    miss_penalty = 0;
+    n_banks = 8;
+    ports = {
+      r = 0;
+      rw = 1;
+      w = 0;
+    };
+    prefetch_nextblock = f;
+    replace_policy = "LRU";
+    size_kb = 64;
+    track_coher_misses = t;
+    wb_buffer_size = 16;
+  };
+  DataDeadBlock = {
+    dead_block_assoc = 8;
+    dead_block_entries = 1024;
+    enable = f;
+    hist_update_at_commit = f;
+    hist_width = 32;
+  };
+  DataMSHR = {
+    entry_count = 16;
+    max_alloc_per_cyc = 4;
+    waiters_per_entry = 32;
+  };
+  DataStreambuf = {
+    alloc_min_confidence_thresh = 1;
+    always_free_on_match = t;
+    blocks_per_stream = 4;
+    enable = f;
+    force_no_overlap = t;
+    n_streams = 8;
+    predict_match_saturate = 8;
+    predict_miss_saturate = 8;
+    prefetch_as_exclusive = t;
+    prefetch_only_when_quiet = t;
+    stream_priority_age_allocs = 10;
+    stream_priority_saturate = 13;
+    stride_pc_assoc = 4;
+    stride_pc_entries = 256;
+    use_round_robin_sched = f;
+    use_two_miss_alloc_filter = f;
+  };
+  Decode = {
+    n_stages = 1;
+  };
+  ExecTime = {
+    all_extra = 0;
+    fp_arith = 4;
+    fp_bit = 4;
+    fp_compare = 4;
+    fp_condbr = 1;
+    fp_condmove = 4;
+    fp_divs = 17;
+    fp_divt = 30;
+    fp_load = 1;
+    fp_store = 1;
+    ftoi = 2;
+    int_arith = 1;
+    int_compare = 0;
+    int_condbr = 1;
+    int_condmove = 2;
+    int_load = 1;
+    int_mull = 8;
+    int_mulq = 16;
+    int_store = 1;
+    int_umulh = 16;
+    itof = 2;
+    smt_fork = 1;
+    smt_lockrel = 1;
+    smt_terminate = 4;
+    uncond_br = 2;
+  };
+  Fetch = {
+    enable_trace_cache = f;
+    n_stages = 1;
+    single_limit = 8;
+    tcache_skips_to_rename = f;
+    thread_count_limit = 2;
+    total_limit = 8;
+  };
+  ICache = {
+    access_time = {
+      interval = 2;
+      latency = 2;
+    };
+    access_time_wb = {
+      interval = 3;
+      latency = 3;
+    };
+    assoc = 2;
+    fill_time = {
+      interval = 2;
+      latency = 2;
+    };
+    miss_penalty = 0;
+    n_banks = 8;
+    ports = {
+      r = 0;
+      rw = 1;
+      w = 0;
+    };
+    prefetch_nextblock = f;
+    replace_policy = "LRU";
+    size_kb = 64;
+    wb_buffer_size = 16;
+  };
+  InstMSHR = {
+    entry_count = 16;
+    max_alloc_per_cyc = 4;
+    waiters_per_entry = 32;
+  };
+  L2Cache = {
+  };
+  L2MSHR = {
+    entry_count = 32;
+    max_alloc_per_cyc = 4;
+    waiters_per_entry = 4;
+  };
+  MultiBranchPredictor = {
+    n_rows = 2048;
+    predict_width = 3;
+  };
+  Queue = {
+    float_ooo_issue = t;
+    float_queue_size = 32;
+    int_ooo_issue = t;
+    int_queue_size = 32;
+    max_float_issue = 1;
+    max_int_issue = 2;
+    max_ldst_issue = 1;
+    max_sync_issue = 2;
+  };
+  RegRead = {
+    n_stages = 1;
+  };
+  RegWrite = {
+    n_stages = 1;
+  };
+  Rename = {
+    float_rename_regs = 64;
+    int_rename_regs = 64;
+    n_stages = 1;
+  };
+  TraceCache = {
+    assoc = 4;
+    block_insts = 8;
+    is_path_assoc = t;
+    n_entries = 2048;
+    pred_per_block = 3;
+    trim_partial_hits = f;
+  };
+  TraceFillUnit = {
+    align_to_bblock = t;
+    allow_indirect_jumps = t;
+    branch_promote_thresh = 64;
+    output_fifo_len = 10;
+    output_interval = 1;
+  };
+  br_bias_entries = 2048;
+  btb_assoc = 4;
+  btb_entries = 256;
+  dtlb_entries = 128;
+  itlb_entries = 48;
+  loadstore_queue_size = 24;
+  pht_entries = 2048;
+  tlb_filter_invalid = t;
+  tlb_miss_penalty = 160;
+};
+Debug = {
+};
+Global = {
+  Mem = {
+    Coher = {
+      apply_evict_notifies = t;
+      prefer_neighbor_shared = t;
+    };
+    L2Cache = {
+      access_time = {
+        interval = 2;
+        latency = 10;
+      };
+      access_time_wb = {
+        interval = 2;
+        latency = 10;
+      };
+      assoc = 8;
+      fill_time = {
+        interval = 2;
+        latency = 4;
+      };
+      miss_penalty = 0;
+      n_banks = 8;
+      ports = {
+        r = 0;
+        rw = 1;
+        w = 0;
+      };
+      prefetch_nextblock = f;
+      replace_policy = "LRU";
+      size_kb = 256;
+      track_coher_misses = t;
+      wb_buffer_size = 16;
+    };
+    L3Cache = {
+      access_time = {
+        interval = 8;
+        latency = 20;
+      };
+      access_time_wb = {
+        interval = 8;
+        latency = 20;
+      };
+      assoc = 16;
+      fill_time = {
+        interval = 8;
+        latency = 20;
+      };
+      miss_penalty = 0;
+      n_banks = 8;
+      ports = {
+        r = 0;
+        rw = 1;
+        w = 0;
+      };
+      prefetch_nextblock = f;
+      replace_policy = "LRU";
+      size_kb = 4096;
+      wb_buffer_size = 16;
+    };
+    MainMem = {
+      n_banks = 16;
+      read_time = {
+        interval = 100;
+        latency = 250;
+      };
+      write_time = {
+        interval = 100;
+        latency = 250;
+      };
+    };
+    bus_request_time = {
+      interval = 1;
+      latency = 1;
+    };
+    bus_transfer_time = {
+      interval = 2;
+      latency = 4;
+    };
+    cache_block_bytes = 64;
+    cache_request_holders = 256;
+    inst_bytes = 4;
+    page_bytes = 8192;
+    private_l2caches = t;
+    split_bus = f;
+    stack_initial_kb = 64;
+    stack_max_kb = 65536;
+    use_coherence = f;
+    use_l3cache = t;
+  };
+  ThreadCoreMap = {
+    policy = "smt";
+    t0 = 0;
+  };
+  abort_on_alist_full = t;
+  disable_coredump = t;
+  nice_level = 19;
+  num_contexts = 1;
+  num_cores = 1;
+  reap_alist_at_squash = t;
+  thread_length = 1e+07;
+};
+GlobalCtxSchedLog = {
+};
+GlobalLongMemLog = {
+};
+GlobalMemProfiler = {
+  enable = f;
+  log_at_commit = t;
+  log_dstream = t;
+  log_istream = t;
+  log_name = "memprof.gz";
+};
+Hacking = {
+  L1MSHRPartition = {
+    enable = f;
+    max_prefetch_producers = 12;
+  };
+  MutableMap = {
+  };
+  StaticAffin = {
+    force_sched = f;
+  };
+  StaticSched = {
+    allow_missing_apps = f;
+  };
+  consider_late_flush = f;
+  csched_deduct_nonrun = t;
+  flush_past_long_loads = f;
+  flush_past_long_stores = f;
+  inhibit_solo_flush = t;
+  inst_spill_fill = t;
+  inst_spill_fill_early = f;
+  long_mem_at_commit = t;
+  long_mem_cyc = 25;
+  min_swapin_commits = 1.;
+  min_swapin_cyc = 0.;
+  perfect_branch_pred = f;
+  perfect_tlbs = f;
+  print_appmgr_stats = t;
+  sched_app = "OldestApp";
+  sched_ctx = "FirstIdle";
+  spill_dirty_only = f;
+  spill_dtlb_missonly = f;
+  spill_dtlb_size = 0;
+  spill_ghr = f;
+  spill_retstack_size = 0;
+  swap = "IfProcFull";
+  swap_suppress_guess = f;
+  swapgate_deduct_nonrun = t;
+  swapgate_deduct_swapout = f;
+  thread_swapin_cyc = 20;
+  thread_swapout_cyc = 20;
+};
+ResourcePooling = {
+  enable = f;
+  limit_policy = "LIMIT75";
+  order_policy = "FIXED";
+  share_all = f;
+  share_fq = t;
+  share_fregs = t;
+  share_iq = t;
+  share_iregs = t;
+  share_lsq = t;
+  share_rob = t;
+};
+Syscall = {
+  ForceUniqueNames = {
+    "fort.11" = t;
+  };
+  report_resize_failures = t;
+  root_paths_at_cwd = t;
+  sanitize_host_device_info = t;
+  uniquify_to_subdir = t;
+};
+Thread = {
+  active_list_size = 512;
+  discard_static_noops = t;
+  reorder_buffer_size = 64;
+  retstack_entries = 12;
+};
+WorkQueue = {
+  Jobs = {
+    job_1 = {
+      start_time = 0.;
+      workload = "crafty";
+    };
+  };
+  enable = t;
+  exit_on_app_exit = t;
+  max_running_jobs = 1;
+  verbose_sched = t;
+};
+Workloads = {
+  GemsFDTD_06 = {
+    argv = {
+      _0 = "GemsFDTD_base.metallica";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdout = "ref.log";
+  };
+  ammp = {
+    argv = {
+      _0 = "ammp";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "ammp.in";
+    stdout = "ammp.out";
+  };
+  applu = {
+    argv = {
+      _0 = "applu";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "applu.in";
+    stdout = "applu.out";
+  };
+  apsi = {
+    argv = {
+      _0 = "apsi";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "apsi.in";
+    stdout = "apsi.out";
+  };
+  art_110 = {
+    argv = {
+      _0 = "art";
+      _1 = "-scanfile";
+      _10 = "110";
+      _11 = "-starty";
+      _12 = "200";
+      _13 = "-endx";
+      _14 = "160";
+      _15 = "-endy";
+      _16 = "240";
+      _17 = "-objects";
+      _18 = "10";
+      _2 = "c756hel.in";
+      _3 = "-trainfile1";
+      _4 = "a10.img";
+      _5 = "-trainfile2";
+      _6 = "hc.img";
+      _7 = "-stride";
+      _8 = "2";
+      _9 = "-startx";
+      size = 19;
+    };
+    ff_dist = 0.;
+    stdout = "ref.1.out";
+  };
+  art_470 = {
+    argv = {
+      _0 = "art";
+      _1 = "-scanfile";
+      _10 = "470";
+      _11 = "-starty";
+      _12 = "140";
+      _13 = "-endx";
+      _14 = "520";
+      _15 = "-endy";
+      _16 = "180";
+      _17 = "-objects";
+      _18 = "10";
+      _2 = "c756hel.in";
+      _3 = "-trainfile1";
+      _4 = "a10.img";
+      _5 = "-trainfile2";
+      _6 = "hc.img";
+      _7 = "-stride";
+      _8 = "2";
+      _9 = "-startx";
+      size = 19;
+    };
+    ff_dist = 0.;
+    stdout = "ref.2.out";
+  };
+  astar_06_rivers = {
+    argv = {
+      _0 = "astar_base.metallica";
+      _1 = "rivers.cfg";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "rivers.out";
+  };
+  bisort_med = {
+    argv = {
+      _0 = "bisort";
+      _1 = "2500000";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  "bt.big" = {
+    argv = {
+      _0 = "bt.A";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  bwaves_06 = {
+    argv = {
+      _0 = "bwaves_base.metallica";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  bzip2_06_chicken = {
+    argv = {
+      _0 = "bzip2_base.metallica";
+      _1 = "chicken.jpg";
+      _2 = "30";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "chicken.jpg.out";
+  };
+  bzip2_graphic = {
+    argv = {
+      _0 = "bzip2";
+      _1 = "bzip2-graphic.in";
+      _2 = "58";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "bzip2-graphic.out";
+  };
+  bzip2_program = {
+    argv = {
+      _0 = "bzip2";
+      _1 = "bzip2-program.in";
+      _2 = "58";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "bzip2-program.out";
+  };
+  bzip2_source = {
+    argv = {
+      _0 = "bzip2";
+      _1 = "bzip2-source.in";
+      _2 = "58";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "bzip2-source.out";
+  };
+  cactusADM_06 = {
+    argv = {
+      _0 = "cactusADM_base.metallica";
+      _1 = "benchADM.par";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "benchADM.out";
+  };
+  calculix_06 = {
+    argv = {
+      _0 = "calculix_base.metallica";
+      _1 = "-i";
+      _2 = "hyperviscoplastic";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "hyperviscoplastic.log";
+  };
+  "cg.big" = {
+    argv = {
+      _0 = "cg.B";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  crafty = {
+    argv = {
+      _0 = "crafty";
+      size = 1;
+    };
+    ff_dist = 1e+07;
+    stdin = "crafty.in";
+    stdout = "crafty.out";
+  };
+  dealII_06 = {
+    argv = {
+      _0 = "dealII_base.metallica";
+      _1 = "23";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "log";
+  };
+  em3d_med = {
+    argv = {
+      _0 = "em3d";
+      _1 = "200000";
+      _2 = "3";
+      _3 = "20";
+      size = 4;
+    };
+    ff_dist = 0.;
+  };
+  eon_cook = {
+    argv = {
+      _0 = "eon";
+      _1 = "chair.control.cook";
+      _2 = "chair.camera";
+      _3 = "chair.surfaces";
+      _4 = "chair.cook.ppm";
+      _5 = "ppm";
+      _6 = "pixels_out.cook";
+      size = 7;
+    };
+    ff_dist = 0.;
+    stdout = "cook_log.out";
+  };
+  eon_kajiya = {
+    argv = {
+      _0 = "eon";
+      _1 = "chair.control.kajiya";
+      _2 = "chair.camera";
+      _3 = "chair.surfaces";
+      _4 = "chair.kajiya.ppm";
+      _5 = "ppm";
+      _6 = "pixels_out.kajiya";
+      size = 7;
+    };
+    ff_dist = 0.;
+    stdout = "kajiya_log.out";
+  };
+  eon_rushmeier = {
+    argv = {
+      _0 = "eon";
+      _1 = "chair.control.rushmeier";
+      _2 = "chair.camera";
+      _3 = "chair.surfaces";
+      _4 = "chair.rushmeier.ppm";
+      _5 = "ppm";
+      _6 = "pixels_out.rushmeier";
+      size = 7;
+    };
+    ff_dist = 0.;
+    stdout = "rushmeier_log.out";
+  };
+  "ep.big" = {
+    argv = {
+      _0 = "ep.C";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  epic = {
+    argv = {
+      _0 = "epic";
+      _1 = "test_image.pgm";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  equake = {
+    argv = {
+      _0 = "equake";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "eqinp.in";
+    stdout = "eqinp.out";
+  };
+  facerec = {
+    argv = {
+      _0 = "facerec";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "ref-facerec.in";
+    stdout = "ref-facerec.out";
+  };
+  fma3d = {
+    argv = {
+      _0 = "fma3d";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "fma3d.in";
+    stdout = "fma3d.out";
+  };
+  "ft.big" = {
+    argv = {
+      _0 = "ft.A";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  g721d = {
+    argv = {
+      _0 = "decode";
+      _1 = "-4";
+      _2 = "-l";
+      _3 = "-f";
+      _4 = "clinton.g721";
+      size = 5;
+    };
+    ff_dist = 0.;
+  };
+  galgel = {
+    argv = {
+      _0 = "galgel";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "galgel.in";
+    stdout = "galgel.out";
+  };
+  gamess_06_cytosine = {
+    argv = {
+      _0 = "gamess_base.metallica";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "cytosine.2.config";
+    stdout = "cytosine.2.out";
+  };
+  gamess_06_triazolium = {
+    argv = {
+      _0 = "gamess_base.metallica";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "triazolium.config";
+    stdout = "triazolium.out";
+  };
+  gap = {
+    argv = {
+      _0 = "gap";
+      _1 = "-l";
+      _2 = "./";
+      _3 = "-q";
+      _4 = "-m";
+      _5 = "192M";
+      size = 6;
+    };
+    ff_dist = 0.;
+    stdin = "ref-gap.in";
+    stdout = "ref-gap.out";
+  };
+  gcc_06_typeck = {
+    argv = {
+      _0 = "gcc_base.metallica";
+      _1 = "c-typeck.i";
+      _2 = "-o";
+      _3 = "c-typeck.s";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "c-typeck.out";
+  };
+  gcc_166 = {
+    argv = {
+      _0 = "cc1";
+      _1 = "166.i";
+      _2 = "-o";
+      _3 = "166.s";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "166.out";
+  };
+  gcc_200 = {
+    argv = {
+      _0 = "cc1";
+      _1 = "200.i";
+      _2 = "-o";
+      _3 = "200.s";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "200.out";
+  };
+  gcc_expr = {
+    argv = {
+      _0 = "cc1";
+      _1 = "expr.i";
+      _2 = "-o";
+      _3 = "expr.s";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "expr.out";
+  };
+  gcc_integrate = {
+    argv = {
+      _0 = "cc1";
+      _1 = "integrate.i";
+      _2 = "-o";
+      _3 = "integrate.s";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "integrate.out";
+  };
+  gcc_scilab = {
+    argv = {
+      _0 = "cc1";
+      _1 = "scilab.i";
+      _2 = "-o";
+      _3 = "scilab.s";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "scilab.out";
+  };
+  gobmk_06_nngs = {
+    argv = {
+      _0 = "gobmk_base.metallica";
+      _1 = "--quiet";
+      _2 = "--mode";
+      _3 = "gtp";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdin = "nngs.tst";
+    stdout = "nngs.out";
+  };
+  gromacs_06 = {
+    argv = {
+      _0 = "gromacs_base.metallica";
+      _1 = "-silent";
+      _2 = "-deffnm";
+      _3 = "gromacs";
+      _4 = "-nice";
+      _5 = "0";
+      size = 6;
+    };
+    ff_dist = 0.;
+  };
+  gzip_graphic = {
+    argv = {
+      _0 = "gzip";
+      _1 = "gzip-graphic.in";
+      _2 = "60";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "gzip-graphic.out";
+  };
+  gzip_log = {
+    argv = {
+      _0 = "gzip";
+      _1 = "gzip-log.in";
+      _2 = "60";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "gzip-log.out";
+  };
+  gzip_program = {
+    argv = {
+      _0 = "gzip";
+      _1 = "gzip-program.in";
+      _2 = "60";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "gzip-program.out";
+  };
+  gzip_source = {
+    argv = {
+      _0 = "gzip";
+      _1 = "gzip-source.in";
+      _2 = "60";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "gzip-source.out";
+  };
+  h264ref_06_sss_encoder_main = {
+    argv = {
+      _0 = "h264ref_base.metallica";
+      _1 = "-d";
+      _2 = "sss_encoder_main.cfg";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "sss_main_encodelog.out";
+  };
+  health = {
+    argv = {
+      _0 = "health";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  hmmer_06_nph3 = {
+    argv = {
+      _0 = "hmmer_base.metallica";
+      _1 = "nph3.hmm";
+      _2 = "swiss41";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "nph3.out";
+  };
+  jpege = {
+    argv = {
+      _0 = "cjpeg";
+      _1 = "-dct";
+      _2 = "int";
+      _3 = "-progressive";
+      _4 = "-opt";
+      _5 = "-outfile";
+      _6 = "teste";
+      _7 = "monalisa.ppm";
+      size = 8;
+    };
+    ff_dist = 0.;
+  };
+  lbm_06 = {
+    argv = {
+      _0 = "lbm_base.metallica";
+      _1 = "3000";
+      _2 = "reference.dat";
+      _3 = "0";
+      _4 = "0";
+      _5 = "100_100_130_ldc.of";
+      size = 6;
+    };
+    ff_dist = 0.;
+    stdout = "lbm.out";
+  };
+  leslie3d_06 = {
+    argv = {
+      _0 = "leslie3d_base.metallica";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "leslie3d.in";
+    stdout = "leslie3d.stdout";
+  };
+  libquantum_06 = {
+    argv = {
+      _0 = "libquantum_base.metallica";
+      _1 = "1397";
+      _2 = "8";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "ref.out";
+  };
+  lucas = {
+    argv = {
+      _0 = "lucas";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "lucas2.in";
+    stdout = "lucas2.out";
+  };
+  mcf = {
+    argv = {
+      _0 = "mcf";
+      _1 = "inp-mcf.in";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "inp-mcf.out";
+  };
+  mcf_06 = {
+    argv = {
+      _0 = "mcf_base.metallica";
+      _1 = "inp.in";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "inp.out";
+  };
+  mesa = {
+    argv = {
+      _0 = "mesa";
+      _1 = "-frames";
+      _2 = "1000";
+      _3 = "-meshfile";
+      _4 = "mesa.in";
+      _5 = "-ppmfile";
+      _6 = "mesa.ppm";
+      size = 7;
+    };
+    ff_dist = 0.;
+  };
+  mesa_texgen = {
+    argv = {
+      _0 = "texgen";
+      _1 = "c";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  "mg.big" = {
+    argv = {
+      _0 = "mg.B";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  mgrid = {
+    argv = {
+      _0 = "mgrid";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "mgrid.in";
+    stdout = "mgrid.out";
+  };
+  milc_06 = {
+    argv = {
+      _0 = "milc_base.metallica";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "su3imp.in";
+    stdout = "su3imp.out";
+  };
+  mst = {
+    argv = {
+      _0 = "mst";
+      _1 = "2048";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  namd_06 = {
+    argv = {
+      _0 = "namd_base.metallica";
+      _1 = "--input";
+      _2 = "namd.input";
+      _3 = "--iterations";
+      _4 = "38";
+      _5 = "--output";
+      _6 = "namd.out";
+      size = 7;
+    };
+    ff_dist = 0.;
+    stdout = "namd.stdout";
+  };
+  omnetpp_06 = {
+    argv = {
+      _0 = "omnetpp_base.metallica";
+      _1 = "omnetpp.ini";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "omnetpp.log";
+  };
+  parser = {
+    argv = {
+      _0 = "parser";
+      _1 = "2.1.dict";
+      _2 = "-batch";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdin = "ref-parser.in";
+    stdout = "ref-parser.out";
+  };
+  perim_big = {
+    argv = {
+      _0 = "perimeter";
+      _1 = "12";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  perlbench_06_checkspam = {
+    argv = {
+      _0 = "perlbench_base.metallica";
+      _1 = "-I./lib";
+      _10 = "1";
+      _11 = "1";
+      _2 = "checkspam.pl";
+      _3 = "2500";
+      _4 = "5";
+      _5 = "25";
+      _6 = "11";
+      _7 = "150";
+      _8 = "1";
+      _9 = "1";
+      size = 12;
+    };
+    ff_dist = 0.;
+    stdout = "checkspam.2500.5.25.11.150.1.1.1.1.out";
+  };
+  perlbmk_diffmail = {
+    argv = {
+      _0 = "perlbmk";
+      _1 = "-I./lib";
+      _2 = "diffmail.pl";
+      _3 = "2";
+      _4 = "550";
+      _5 = "15";
+      _6 = "24";
+      _7 = "23";
+      _8 = "100";
+      size = 9;
+    };
+    ff_dist = 0.;
+    stdout = "2.550.15.24.23.100.out";
+  };
+  perlbmk_makerand = {
+    argv = {
+      _0 = "perlbmk";
+      _1 = "-I.";
+      _2 = "-I./lib";
+      _3 = "makerand.pl";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "makerand.out";
+  };
+  perlbmk_perfect = {
+    argv = {
+      _0 = "perlbmk";
+      _1 = "-I./lib";
+      _2 = "perfect.pl";
+      _3 = "b";
+      _4 = "3";
+      _5 = "m";
+      _6 = "4";
+      size = 7;
+    };
+    ff_dist = 0.;
+    stdout = "b.3.m.4.out";
+  };
+  perlbmk_splitmail535 = {
+    argv = {
+      _0 = "perlbmk";
+      _1 = "-I./lib";
+      _2 = "splitmail.pl";
+      _3 = "535";
+      _4 = "13";
+      _5 = "25";
+      _6 = "24";
+      _7 = "1091";
+      size = 8;
+    };
+    ff_dist = 0.;
+    stdout = "535.13.25.24.1091.out";
+  };
+  perlbmk_splitmail704 = {
+    argv = {
+      _0 = "perlbmk";
+      _1 = "-I./lib";
+      _2 = "splitmail.pl";
+      _3 = "704";
+      _4 = "12";
+      _5 = "26";
+      _6 = "16";
+      _7 = "836";
+      size = 8;
+    };
+    ff_dist = 0.;
+    stdout = "704.12.26.16.836.out";
+  };
+  perlbmk_splitmail850 = {
+    argv = {
+      _0 = "perlbmk";
+      _1 = "-I./lib";
+      _2 = "splitmail.pl";
+      _3 = "850";
+      _4 = "5";
+      _5 = "19";
+      _6 = "18";
+      _7 = "1500";
+      size = 8;
+    };
+    ff_dist = 0.;
+    stdout = "850.5.19.18.1500.out";
+  };
+  perlbmk_splitmail957 = {
+    argv = {
+      _0 = "perlbmk";
+      _1 = "-I./lib";
+      _2 = "splitmail.pl";
+      _3 = "957";
+      _4 = "12";
+      _5 = "23";
+      _6 = "26";
+      _7 = "1014";
+      size = 8;
+    };
+    ff_dist = 0.;
+    stdout = "957.12.23.26.1014.out";
+  };
+  povray_06 = {
+    argv = {
+      _0 = "povray_base.metallica";
+      _1 = "SPEC-benchmark-ref.ini";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "SPEC-benchmark-ref.stdout";
+  };
+  sixtrack = {
+    argv = {
+      _0 = "sixtrack";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "inp-sixtrack.in";
+    stdout = "inp-sixtrack.out";
+  };
+  sjeng_06 = {
+    argv = {
+      _0 = "sjeng_base.metallica";
+      _1 = "ref.txt";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "ref.out";
+  };
+  soplex_06_pds_50 = {
+    argv = {
+      _0 = "soplex_base.metallica";
+      _1 = "-s1";
+      _2 = "-e";
+      _3 = "-m45000";
+      _4 = "pds_50.mps";
+      size = 5;
+    };
+    ff_dist = 0.;
+    stdout = "pds-50.mps.out";
+  };
+  soplex_06_ref = {
+    argv = {
+      _0 = "soplex_base.metallica";
+      _1 = "-m3500";
+      _2 = "ref.mps";
+      size = 3;
+    };
+    ff_dist = 0.;
+    stdout = "ref.out";
+  };
+  "sp.big" = {
+    argv = {
+      _0 = "sp.B";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  sphinx3_06 = {
+    argv = {
+      _0 = "sphinx_livepretend_base.metallica";
+      _1 = "ctlfile";
+      _2 = ".";
+      _3 = "args.an4";
+      size = 4;
+    };
+    ff_dist = 0.;
+    stdout = "an4.log";
+  };
+  swim = {
+    argv = {
+      _0 = "swim";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdin = "swim.in";
+    stdout = "swim.out";
+  };
+  treeadd = {
+    argv = {
+      _0 = "treeadd";
+      size = 1;
+    };
+    ff_dist = 0.;
+  };
+  twolf = {
+    argv = {
+      _0 = "twolf";
+      _1 = "ref";
+      size = 2;
+    };
+    ff_dist = 0.;
+    stdout = "ref-twolf.out";
+  };
+  vortex_1 = {
+    argv = {
+      _0 = "vortex";
+      _1 = "lendian1.raw";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  vortex_2 = {
+    argv = {
+      _0 = "vortex";
+      _1 = "lendian2.raw";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  vortex_3 = {
+    argv = {
+      _0 = "vortex";
+      _1 = "lendian3.raw";
+      size = 2;
+    };
+    ff_dist = 0.;
+  };
+  vpr_place = {
+    argv = {
+      _0 = "vpr";
+      _1 = "net.in";
+      _10 = "0.005";
+      _11 = "-alpha_t";
+      _12 = "0.9412";
+      _13 = "-inner_num";
+      _14 = "2";
+      _2 = "arch.in";
+      _3 = "place.out";
+      _4 = "dum.out";
+      _5 = "-nodisp";
+      _6 = "-place_only";
+      _7 = "-init_t";
+      _8 = "5";
+      _9 = "-exit_t";
+      size = 15;
+    };
+    ff_dist = 0.;
+    stdout = "vpr_place.out";
+  };
+  vpr_route = {
+    argv = {
+      _0 = "vpr";
+      _1 = "net.in";
+      _10 = "2";
+      _11 = "-acc_fac";
+      _12 = "1";
+      _13 = "-first_iter_pres_fac";
+      _14 = "4";
+      _15 = "-initial_pres_fac";
+      _16 = "8";
+      _2 = "arch.in";
+      _3 = "place.in";
+      _4 = "route.out";
+      _5 = "-nodisp";
+      _6 = "-route_only";
+      _7 = "-route_chan_width";
+      _8 = "15";
+      _9 = "-pres_fac_mult";
+      size = 17;
+    };
+    ff_dist = 0.;
+    stdout = "vpr-route.out";
+  };
+  wupwise = {
+    argv = {
+      _0 = "wupwise";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdout = "wupwise.out";
+  };
+  zeusmp_06 = {
+    argv = {
+      _0 = "zeusmp_base.metallica";
+      size = 1;
+    };
+    ff_dist = 0.;
+    stdout = "zeusmp.stdout";
+  };
+};
+--------
+Contexts: 1, cores: 1
+  context 0 on core 0
+Printing Pooled Resources:
+  ROB  64 
+   IQ  32 
+   FQ  32 
+ IREG  64 
+ FREG  64 
+  LSQ  24 
+
+--Startup complete; beginning simulation.
+WorkQueue::sim_prestart_jobs: pre-starting jobs: 0
+App A0: (crafty)
+--Logging A0 stats every 10000 cyc to "/home/onkar/Downloads/SMTSIM/results/Project/crafty15.A0": cyc commits l3cache_hr mem_delay itlb_acc dtlb_acc icache_acc dcache_acc l2cache_acc l3cache_acc bpred_acc intalu_acc fpalu_acc ldst_acc iq_acc fq_acc ireg_acc freg_acc iren_acc fren_acc lsq_acc rob_acc iq_occ fq_occ ireg_occ freg_occ lsq_occ rob_occ
+--Fast-forwarding app A0 for 10000000 insts...
+--FF'd 10000000 insts in 0.4000/0.000/0.3990(100.3%) sec: 2.500e+07 inst/s
+WorkQueue: job 0 "WorkQueue/Jobs/job_1" started at time 0, initial apps [ 0 ]
+Printing Pooled Resources:
+  ROB  48 
+   IQ  24 
+   FQ  24 
+ IREG  48 
+ FREG  48 
+  LSQ  18 
+
+appmgr: A0 swap-in C0 T0 final_fill_commit at 39; swapin delay 39 (targfetch) 39 (fillcommit), migrate delay -1 (tf) 1 (fc)
+Instructions :3893		IPC: 0.389300	
+Instructions :4173		IPC: 0.417300	
+Instructions :4084		IPC: 0.408400	
+Instructions :5156		IPC: 0.515600	
+Instructions :13610		IPC: 1.361000	
+Instructions :13201		IPC: 1.320100	
+Instructions :6491		IPC: 0.649100	
+Instructions :11533		IPC: 1.153300	
+Instructions :7703		IPC: 0.770300	
+Instructions :6620		IPC: 0.662000	
+Instructions :7696		IPC: 0.769600	
+Instructions :8540		IPC: 0.854000	
+Instructions :6826		IPC: 0.682600	
+Instructions :7034		IPC: 0.703400	
+Instructions :7696		IPC: 0.769600	
+Instructions :11721		IPC: 1.172100	
+Instructions :6807		IPC: 0.680700	
+Instructions :12714		IPC: 1.271400	
+Instructions :6967		IPC: 0.696700	
+Instructions :13261		IPC: 1.326100	
+Instructions :11880		IPC: 1.188000	
+Instructions :2945		IPC: 0.294500	
+Instructions :2597		IPC: 0.259700	
+Instructions :1319		IPC: 0.131900	
+Instructions :2868		IPC: 0.286800	
+Instructions :11464		IPC: 1.146400	
+Instructions :11808		IPC: 1.180800	
+Instructions :12065		IPC: 1.206500	
+Instructions :11900		IPC: 1.190000	
+Instructions :12001		IPC: 1.200100	
+Instructions :12127		IPC: 1.212700	
+Instructions :11904		IPC: 1.190400	
+Instructions :12096		IPC: 1.209600	
+Instructions :12028		IPC: 1.202800	
+Instructions :11895		IPC: 1.189500	
+Instructions :12050		IPC: 1.205000	
+Instructions :11916		IPC: 1.191600	
+Instructions :11558		IPC: 1.155800	
+Instructions :11849		IPC: 1.184900	
+Instructions :11733		IPC: 1.173300	
+Instructions :12039		IPC: 1.203900	
+Instructions :12112		IPC: 1.211200	
+Instructions :11988		IPC: 1.198800	
+Instructions :12126		IPC: 1.212600	
+Instructions :12107		IPC: 1.210700	
+Instructions :12054		IPC: 1.205400	
+Instructions :12128		IPC: 1.212800	
+Instructions :11983		IPC: 1.198300	
+Instructions :11886		IPC: 1.188600	
+Instructions :12135		IPC: 1.213500	
+Instructions :11714		IPC: 1.171400	
+Instructions :11825		IPC: 1.182500	
+Instructions :11932		IPC: 1.193200	
+Instructions :11938		IPC: 1.193800	
+Instructions :12034		IPC: 1.203400	
+Instructions :12054		IPC: 1.205400	
+Instructions :12025		IPC: 1.202500	
+Instructions :12223		IPC: 1.222300	
+Instructions :11881		IPC: 1.188100	
+Instructions :11968		IPC: 1.196800	
+Instructions :11989		IPC: 1.198900	
+Instructions :11923		IPC: 1.192300	
+Instructions :11891		IPC: 1.189100	
+Instructions :11719		IPC: 1.171900	
+Instructions :11818		IPC: 1.181800	
+Instructions :11932		IPC: 1.193200	
+Instructions :12036		IPC: 1.203600	
+Instructions :11934		IPC: 1.193400	
+Instructions :12108		IPC: 1.210800	
+Instructions :11935		IPC: 1.193500	
+Instructions :12133		IPC: 1.213300	
+Instructions :11995		IPC: 1.199500	
+Instructions :11966		IPC: 1.196600	
+Instructions :12037		IPC: 1.203700	
+Instructions :12002		IPC: 1.200200	
+Instructions :11902		IPC: 1.190200	
+Instructions :11717		IPC: 1.171700	
+Instructions :12010		IPC: 1.201000	
+Instructions :11893		IPC: 1.189300	
+Instructions :12036		IPC: 1.203600	
+Instructions :12039		IPC: 1.203900	
+Instructions :11998		IPC: 1.199800	
+Instructions :12026		IPC: 1.202600	
+Instructions :12038		IPC: 1.203800	
+Instructions :11976		IPC: 1.197600	
+Instructions :12029		IPC: 1.202900	
+Instructions :11957		IPC: 1.195700	
+Instructions :11866		IPC: 1.186600	
+Instructions :11839		IPC: 1.183900	
+Instructions :11752		IPC: 1.175200	
+Instructions :11895		IPC: 1.189500	
+Instructions :12186		IPC: 1.218600	
+Instructions :12011		IPC: 1.201100	
+Instructions :12047		IPC: 1.204700	
+Instructions :12220		IPC: 1.222000	
+Instructions :12061		IPC: 1.206100	
+Instructions :12086		IPC: 1.208600	
+Instructions :12066		IPC: 1.206600	
+Instructions :12026		IPC: 1.202600	
+Instructions :12093		IPC: 1.209300	
+Instructions :5753		IPC: 0.575300	
+Instructions :6900		IPC: 0.690000	
+Instructions :4169		IPC: 0.416900	
+Instructions :612		IPC: 0.061200	
+Instructions :440		IPC: 0.044000	
+Instructions :424		IPC: 0.042400	
+Instructions :1476		IPC: 0.147600	
+Instructions :2680		IPC: 0.268000	
+Instructions :1972		IPC: 0.197200	
+Instructions :2040		IPC: 0.204000	
+Instructions :1904		IPC: 0.190400	
+Instructions :2040		IPC: 0.204000	
+Instructions :2040		IPC: 0.204000	
+Instructions :1972		IPC: 0.197200	
+Instructions :1972		IPC: 0.197200	
+Instructions :1972		IPC: 0.197200	
+Instructions :2040		IPC: 0.204000	
+Instructions :1972		IPC: 0.197200	
+Instructions :2040		IPC: 0.204000	
+Instructions :1972		IPC: 0.197200	
+Instructions :1972		IPC: 0.197200	
+Instructions :2040		IPC: 0.204000	
+Instructions :1972		IPC: 0.197200	
+Instructions :1972		IPC: 0.197200	
+Instructions :2033		IPC: 0.203300	
+Instructions :1979		IPC: 0.197900	
+Instructions :2040		IPC: 0.204000	
+Instructions :1972		IPC: 0.197200	
+Instructions :1972		IPC: 0.197200	
+Instructions :2040		IPC: 0.204000	
+Instructions :1972		IPC: 0.197200	
+Instructions :2040		IPC: 0.204000	
+Instructions :1972		IPC: 0.197200	
+Instructions :1972		IPC: 0.197200	
+Instructions :2040		IPC: 0.204000	
+Instructions :1972		IPC: 0.197200	
+Instructions :1972		IPC: 0.197200	
+Instructions :2040		IPC: 0.204000	
+Instructions :2040		IPC: 0.204000	
+Instructions :1972		IPC: 0.197200	
+Instructions :2040		IPC: 0.204000	
+Instructions :1904		IPC: 0.190400	
+Instructions :2040		IPC: 0.204000	
+Instructions :1972		IPC: 0.197200	
+Instructions :2040		IPC: 0.204000	
+Instructions :1972		IPC: 0.197200	
+Instructions :1972		IPC: 0.197200	
+Instructions :2040		IPC: 0.204000	
+Instructions :1972		IPC: 0.197200	
+Instructions :1972		IPC: 0.197200	
+Instructions :2040		IPC: 0.204000	
+Instructions :1972		IPC: 0.197200	
+Instructions :2040		IPC: 0.204000	
+Instructions :1972		IPC: 0.197200	
+Instructions :1972		IPC: 0.197200	
+Instructions :1972		IPC: 0.197200	
+Instructions :2040		IPC: 0.204000	
+Instructions :2040		IPC: 0.204000	
+Instructions :1904		IPC: 0.190400	
+Instructions :2040		IPC: 0.204000	
+Instructions :1972		IPC: 0.197200	
+Instructions :2040		IPC: 0.204000	
+Instructions :1946		IPC: 0.194600	
+Instructions :1998		IPC: 0.199800	
+Instructions :2040		IPC: 0.204000	
+Instructions :1972		IPC: 0.197200	
+Instructions :2040		IPC: 0.204000	
+Instructions :1904		IPC: 0.190400	
+Instructions :2040		IPC: 0.204000	
+Instructions :2022		IPC: 0.202200	
+Instructions :1990		IPC: 0.199000	
+Instructions :1972		IPC: 0.197200	
+Instructions :1972		IPC: 0.197200	
+Instructions :2040		IPC: 0.204000	
+Instructions :1972		IPC: 0.197200	
+Instructions :2040		IPC: 0.204000	
+Instructions :2029		IPC: 0.202900	
+Instructions :2064		IPC: 0.206400	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2046		IPC: 0.204600	
+Instructions :2130		IPC: 0.213000	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2106		IPC: 0.210600	
+Instructions :2070		IPC: 0.207000	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2088		IPC: 0.208800	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2050		IPC: 0.205000	
+Instructions :2126		IPC: 0.212600	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2118		IPC: 0.211800	
+Instructions :2058		IPC: 0.205800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2160		IPC: 0.216000	
+Instructions :2016		IPC: 0.201600	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2160		IPC: 0.216000	
+Instructions :2016		IPC: 0.201600	
+Instructions :2160		IPC: 0.216000	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2088		IPC: 0.208800	
+Instructions :2135		IPC: 0.213500	
+Instructions :2113		IPC: 0.211300	
+Instructions :2160		IPC: 0.216000	
+Instructions :2016		IPC: 0.201600	
+Instructions :2160		IPC: 0.216000	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2094		IPC: 0.209400	
+Instructions :2082		IPC: 0.208200	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2160		IPC: 0.216000	
+Instructions :2016		IPC: 0.201600	
+Instructions :2160		IPC: 0.216000	
+Instructions :2145		IPC: 0.214500	
+Instructions :2103		IPC: 0.210300	
+Instructions :2160		IPC: 0.216000	
+Instructions :2016		IPC: 0.201600	
+Instructions :2160		IPC: 0.216000	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2016		IPC: 0.201600	
+Instructions :2160		IPC: 0.216000	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2144		IPC: 0.214400	
+Instructions :2104		IPC: 0.210400	
+Instructions :2088		IPC: 0.208800	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :2160		IPC: 0.216000	
+Instructions :2016		IPC: 0.201600	
+Instructions :2160		IPC: 0.216000	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2088		IPC: 0.208800	
+Instructions :2098		IPC: 0.209800	
+Instructions :2150		IPC: 0.215000	
+Instructions :2160		IPC: 0.216000	
+Instructions :2088		IPC: 0.208800	
+Instructions :2160		IPC: 0.216000	
+Instructions :4310		IPC: 0.431000	
+Instructions :7134		IPC: 0.713400	
+Instructions :7174		IPC: 0.717400	
+Instructions :7086		IPC: 0.708600	
+Instructions :7177		IPC: 0.717700	
+Instructions :6904		IPC: 0.690400	
+Instructions :7098		IPC: 0.709800	
+Instructions :7032		IPC: 0.703200	
+Instructions :7130		IPC: 0.713000	
+Instructions :7173		IPC: 0.717300	
+Instructions :7108		IPC: 0.710800	
+Instructions :7155		IPC: 0.715500	
+Instructions :7141		IPC: 0.714100	
+Instructions :7134		IPC: 0.713400	
+Instructions :7174		IPC: 0.717400	
+Instructions :7039		IPC: 0.703900	
+Instructions :7152		IPC: 0.715200	
+Instructions :7068		IPC: 0.706800	
+Instructions :7142		IPC: 0.714200	
+Instructions :7088		IPC: 0.708800	
+Instructions :6937		IPC: 0.693700	
+Instructions :7174		IPC: 0.717400	
+Instructions :7086		IPC: 0.708600	
+Instructions :7177		IPC: 0.717700	
+Instructions :7141		IPC: 0.714100	
+Instructions :7134		IPC: 0.713400	
+Instructions :7174		IPC: 0.717400	
+Instructions :7011		IPC: 0.701100	
+Instructions :7016		IPC: 0.701600	
+Instructions :7140		IPC: 0.714000	
+Instructions :7102		IPC: 0.710200	
+Instructions :7173		IPC: 0.717300	
+Instructions :6986		IPC: 0.698600	
+Instructions :7172		IPC: 0.717200	
+Instructions :7086		IPC: 0.708600	
+Instructions :7177		IPC: 0.717700	
+Instructions :7141		IPC: 0.714100	
+Instructions :7134		IPC: 0.713400	
+Instructions :7174		IPC: 0.717400	
+Instructions :7086		IPC: 0.708600	
+Instructions :7114		IPC: 0.711400	
+Instructions :6863		IPC: 0.686300	
+Instructions :7108		IPC: 0.710800	
+Instructions :7140		IPC: 0.714000	
+Instructions :7117		IPC: 0.711700	
+Instructions :7172		IPC: 0.717200	
+Instructions :7086		IPC: 0.708600	
+Instructions :7177		IPC: 0.717700	
+Instructions :7141		IPC: 0.714100	
+Instructions :7047		IPC: 0.704700	
+Instructions :7152		IPC: 0.715200	
+Instructions :7117		IPC: 0.711700	
+Instructions :7158		IPC: 0.715800	
+Instructions :7001		IPC: 0.700100	
+Instructions :7098		IPC: 0.709800	
+Instructions :7027		IPC: 0.702700	
+Instructions :7134		IPC: 0.713400	
+Instructions :7174		IPC: 0.717400	
+Instructions :7086		IPC: 0.708600	
+Instructions :7177		IPC: 0.717700	
+Instructions :7141		IPC: 0.714100	
+Instructions :7134		IPC: 0.713400	
+Instructions :7174		IPC: 0.717400	
+Instructions :7096		IPC: 0.709600	
+Instructions :7167		IPC: 0.716700	
+Instructions :7141		IPC: 0.714100	
+Instructions :7134		IPC: 0.713400	
+Instructions :7174		IPC: 0.717400	
+Instructions :7086		IPC: 0.708600	
+Instructions :7177		IPC: 0.717700	
+Instructions :7141		IPC: 0.714100	
+Instructions :6409		IPC: 0.640900	
+Instructions :390		IPC: 0.039000	
+Instructions :405		IPC: 0.040500	
+Instructions :824		IPC: 0.082400	
+Instructions :726		IPC: 0.072600	
+Instructions :1432		IPC: 0.143200	
+Instructions :3418		IPC: 0.341800	
+Instructions :3084		IPC: 0.308400	
+Instructions :2362		IPC: 0.236200	
+Instructions :2103		IPC: 0.210300	
+Instructions :8801		IPC: 0.880100	
+Instructions :10960		IPC: 1.096000	
+Instructions :2206		IPC: 0.220600	
+Instructions :803		IPC: 0.080300	
+Instructions :3607		IPC: 0.360700	
+Instructions :9705		IPC: 0.970500	
+Instructions :8840		IPC: 0.884000	
+Instructions :8570		IPC: 0.857000	
+Instructions :6177		IPC: 0.617700	
+Instructions :9581		IPC: 0.958100	
+Instructions :2392		IPC: 0.239200	
+Instructions :1107		IPC: 0.110700	
+Instructions :1149		IPC: 0.114900	
+Instructions :1107		IPC: 0.110700	
+Instructions :1104		IPC: 0.110400	
+Instructions :1149		IPC: 0.114900	
+Instructions :1104		IPC: 0.110400	
+Instructions :1152		IPC: 0.115200	
+Instructions :1104		IPC: 0.110400	
+Instructions :1107		IPC: 0.110700	
+Instructions :1149		IPC: 0.114900	
+Instructions :5246		IPC: 0.524600	
+Instructions :5240		IPC: 0.524000	
+Instructions :12295		IPC: 1.229500	
+Instructions :8432		IPC: 0.843200	
+Instructions :10448		IPC: 1.044800	
+Instructions :1294		IPC: 0.129400	
+Instructions :492		IPC: 0.049200	
+Instructions :559		IPC: 0.055900	
+Instructions :828		IPC: 0.082800	
+Instructions :2027		IPC: 0.202700	
+Instructions :1946		IPC: 0.194600	
+Instructions :1608		IPC: 0.160800	
+Instructions :9249		IPC: 0.924900	
+Instructions :10301		IPC: 1.030100	
+Instructions :10260		IPC: 1.026000	
+Instructions :10295		IPC: 1.029500	
+Instructions :10301		IPC: 1.030100	
+Instructions :10260		IPC: 1.026000	
+Instructions :10275		IPC: 1.027500	
+Instructions :10321		IPC: 1.032100	
+Instructions :10260		IPC: 1.026000	
+Instructions :10267		IPC: 1.026700	
+Instructions :10321		IPC: 1.032100	
+Instructions :10268		IPC: 1.026800	
+Instructions :10267		IPC: 1.026700	
+Instructions :10325		IPC: 1.032500	
+Instructions :10188		IPC: 1.018800	
+Instructions :10166		IPC: 1.016600	
+Instructions :10691		IPC: 1.069100	
+Instructions :10821		IPC: 1.082100	
+Instructions :10800		IPC: 1.080000	
+Instructions :10800		IPC: 1.080000	
+Instructions :10800		IPC: 1.080000	
+Instructions :10800		IPC: 1.080000	
+Instructions :10800		IPC: 1.080000	
+Instructions :10800		IPC: 1.080000	
+Instructions :10800		IPC: 1.080000	
+Instructions :10801		IPC: 1.080100	
+Instructions :10799		IPC: 1.079900	
+Instructions :10815		IPC: 1.081500	
+Instructions :10795		IPC: 1.079500	
+Instructions :10825		IPC: 1.082500	
+Instructions :10804		IPC: 1.080400	
+Instructions :10832		IPC: 1.083200	
+Instructions :10809		IPC: 1.080900	
+Instructions :10800		IPC: 1.080000	
+Instructions :10455		IPC: 1.045500	
+Instructions :10796		IPC: 1.079600	
+Instructions :10829		IPC: 1.082900	
+Instructions :10795		IPC: 1.079500	
+Instructions :10805		IPC: 1.080500	
+Instructions :10800		IPC: 1.080000	
+Instructions :10800		IPC: 1.080000	
+Instructions :10800		IPC: 1.080000	
+Instructions :10800		IPC: 1.080000	
+Instructions :10800		IPC: 1.080000	
+Instructions :10800		IPC: 1.080000	
+Instructions :7309		IPC: 0.730900	
+Instructions :515		IPC: 0.051500	
+Instructions :906		IPC: 0.090600	
+Instructions :323		IPC: 0.032300	
+Instructions :1485		IPC: 0.148500	
+Instructions :1720		IPC: 0.172000	
+Instructions :283		IPC: 0.028300	
+Instructions :299		IPC: 0.029900	
+Instructions :411		IPC: 0.041100	
+Instructions :329		IPC: 0.032900	
+Instructions :378		IPC: 0.037800	
+Instructions :482		IPC: 0.048200	
+Instructions :2607		IPC: 0.260700	
+Instructions :3000		IPC: 0.300000	
+Instructions :6577		IPC: 0.657700	
+Instructions :7532		IPC: 0.753200	
+Instructions :9008		IPC: 0.900800	
+Instructions :7577		IPC: 0.757700	
+Instructions :8609		IPC: 0.860900	
+Instructions :7269		IPC: 0.726900	
+Instructions :10047		IPC: 1.004700	
+Instructions :9341		IPC: 0.934100	
+Instructions :10831		IPC: 1.083100	
+Instructions :10749		IPC: 1.074900	
+Instructions :10560		IPC: 1.056000	
+Instructions :9304		IPC: 0.930400	
+Instructions :6019		IPC: 0.601900	
+Instructions :8194		IPC: 0.819400	
+Instructions :8416		IPC: 0.841600	
+Instructions :8249		IPC: 0.824900	
+Instructions :8797		IPC: 0.879700	
+Instructions :9046		IPC: 0.904600	
+Instructions :9542		IPC: 0.954200	
+Instructions :9585		IPC: 0.958500	
+Instructions :15455		IPC: 1.545500	
+Instructions :6126		IPC: 0.612600	
+Instructions :1409		IPC: 0.140900	
+Instructions :973		IPC: 0.097300	
+Instructions :1061		IPC: 0.106100	
+Instructions :1663		IPC: 0.166300	
+Instructions :530		IPC: 0.053000	
+Instructions :1169		IPC: 0.116900	
+Instructions :2168		IPC: 0.216800	
+Instructions :3548		IPC: 0.354800	
+Instructions :2748		IPC: 0.274800	
+Instructions :3360		IPC: 0.336000	
+Instructions :14211		IPC: 1.421100	
+Instructions :14100		IPC: 1.410000	
+Instructions :491		IPC: 0.049100	
+Instructions :698		IPC: 0.069800	
+Instructions :617		IPC: 0.061700	
+Instructions :1951		IPC: 0.195100	
+Instructions :3204		IPC: 0.320400	
+Instructions :12984		IPC: 1.298400	
+Instructions :11228		IPC: 1.122800	
+Instructions :10045		IPC: 1.004500	
+Instructions :4700		IPC: 0.470000	
+Instructions :3145		IPC: 0.314500	
+Instructions :3983		IPC: 0.398300	
+Instructions :11435		IPC: 1.143500	
+Instructions :4196		IPC: 0.419600	
+Instructions :1050		IPC: 0.105000	
+Instructions :4278		IPC: 0.427800	
+Instructions :6248		IPC: 0.624800	
+Instructions :9841		IPC: 0.984100	
+Instructions :10021		IPC: 1.002100	
+Instructions :13239		IPC: 1.323900	
+Instructions :1796		IPC: 0.179600	
+Instructions :6491		IPC: 0.649100	
+Instructions :11164		IPC: 1.116400	
+Instructions :11769		IPC: 1.176900	
+Instructions :9761		IPC: 0.976100	
+Instructions :7829		IPC: 0.782900	
+Instructions :9831		IPC: 0.983100	
+Instructions :8001		IPC: 0.800100	
+Instructions :7669		IPC: 0.766900	
+Instructions :8127		IPC: 0.812700	
+Instructions :5491		IPC: 0.549100	
+Instructions :10239		IPC: 1.023900	
+Instructions :10523		IPC: 1.052300	
+Instructions :10757		IPC: 1.075700	
+Instructions :11028		IPC: 1.102800	
+Instructions :9794		IPC: 0.979400	
+Instructions :12039		IPC: 1.203900	
+Instructions :12089		IPC: 1.208900	
+Instructions :8590		IPC: 0.859000	
+Instructions :7636		IPC: 0.763600	
+Instructions :8293		IPC: 0.829300	
+Instructions :9901		IPC: 0.990100	
+Instructions :10997		IPC: 1.099700	
+Instructions :9788		IPC: 0.978800	
+Instructions :9603		IPC: 0.960300	
+Instructions :9497		IPC: 0.949700	
+Instructions :10786		IPC: 1.078600	
+Instructions :12257		IPC: 1.225700	
+Instructions :8447		IPC: 0.844700	
+Instructions :10464		IPC: 1.046400	
+Instructions :10695		IPC: 1.069500	
+Instructions :11946		IPC: 1.194600	
+Instructions :11660		IPC: 1.166000	
+Instructions :10684		IPC: 1.068400	
+Instructions :9780		IPC: 0.978000	
+Instructions :11907		IPC: 1.190700	
+Instructions :12392		IPC: 1.239200	
+Instructions :12813		IPC: 1.281300	
+Instructions :8794		IPC: 0.879400	
+Instructions :8258		IPC: 0.825800	
+Instructions :7102		IPC: 0.710200	
+Instructions :10558		IPC: 1.055800	
+Instructions :9730		IPC: 0.973000	
+Instructions :12795		IPC: 1.279500	
+Instructions :9184		IPC: 0.918400	
+Instructions :11953		IPC: 1.195300	
+Instructions :9689		IPC: 0.968900	
+Instructions :10392		IPC: 1.039200	
+Instructions :10176		IPC: 1.017600	
+Instructions :10760		IPC: 1.076000	
+Instructions :9498		IPC: 0.949800	
+Instructions :11386		IPC: 1.138600	
+Instructions :11394		IPC: 1.139400	
+Instructions :11345		IPC: 1.134500	
+Instructions :8350		IPC: 0.835000	
+Instructions :9475		IPC: 0.947500	
+Instructions :10272		IPC: 1.027200	
+Instructions :9912		IPC: 0.991200	
+Instructions :10409		IPC: 1.040900	
+Instructions :11144		IPC: 1.114400	
+Instructions :12492		IPC: 1.249200	
+Instructions :6796		IPC: 0.679600	
+Instructions :8336		IPC: 0.833600	
+Instructions :9575		IPC: 0.957500	
+Instructions :9620		IPC: 0.962000	
+Instructions :6868		IPC: 0.686800	
+Instructions :8069		IPC: 0.806900	
+Instructions :10400		IPC: 1.040000	
+Instructions :12048		IPC: 1.204800	
+Instructions :10630		IPC: 1.063000	
+Instructions :12005		IPC: 1.200500	
+Instructions :10688		IPC: 1.068800	
+Instructions :7243		IPC: 0.724300	
+Instructions :10743		IPC: 1.074300	
+Instructions :10470		IPC: 1.047000	
+Instructions :9357		IPC: 0.935700	
+Instructions :10072		IPC: 1.007200	
+Instructions :10750		IPC: 1.075000	
+Instructions :10913		IPC: 1.091300	
+Instructions :10096		IPC: 1.009600	
+Instructions :10952		IPC: 1.095200	
+Instructions :11753		IPC: 1.175300	
+Instructions :11620		IPC: 1.162000	
+Instructions :10763		IPC: 1.076300	
+Instructions :11179		IPC: 1.117900	
+Instructions :10505		IPC: 1.050500	
+Instructions :9470		IPC: 0.947000	
+Instructions :10350		IPC: 1.035000	
+Instructions :11205		IPC: 1.120500	
+Instructions :11760		IPC: 1.176000	
+Instructions :11668		IPC: 1.166800	
+Instructions :12447		IPC: 1.244700	
+Instructions :13053		IPC: 1.305300	
+Instructions :11550		IPC: 1.155000	
+Instructions :10404		IPC: 1.040400	
+Instructions :11001		IPC: 1.100100	
+Instructions :10709		IPC: 1.070900	
+Instructions :11903		IPC: 1.190300	
+Instructions :11806		IPC: 1.180600	
+Instructions :10334		IPC: 1.033400	
+Instructions :7958		IPC: 0.795800	
+Instructions :6627		IPC: 0.662700	
+Instructions :14592		IPC: 1.459200	
+Instructions :10842		IPC: 1.084200	
+Instructions :12689		IPC: 1.268900	
+Instructions :14030		IPC: 1.403000	
+Instructions :10661		IPC: 1.066100	
+Instructions :11029		IPC: 1.102900	
+Instructions :10474		IPC: 1.047400	
+Instructions :9791		IPC: 0.979100	
+Instructions :10405		IPC: 1.040500	
+Instructions :9164		IPC: 0.916400	
+Instructions :13499		IPC: 1.349900	
+Instructions :10618		IPC: 1.061800	
+Instructions :11344		IPC: 1.134400	
+Instructions :10684		IPC: 1.068400	
+Instructions :11584		IPC: 1.158400	
+Instructions :13483		IPC: 1.348300	
+Instructions :11873		IPC: 1.187300	
+Instructions :10229		IPC: 1.022900	
+Instructions :12179		IPC: 1.217900	
+Instructions :11081		IPC: 1.108100	
+Instructions :10690		IPC: 1.069000	
+Instructions :7836		IPC: 0.783600	
+Instructions :10947		IPC: 1.094700	
+Instructions :9961		IPC: 0.996100	
+Instructions :9400		IPC: 0.940000	
+Instructions :5726		IPC: 0.572600	
+Instructions :9045		IPC: 0.904500	
+Instructions :10085		IPC: 1.008500	
+Instructions :12039		IPC: 1.203900	
+Instructions :12556		IPC: 1.255600	
+Instructions :13841		IPC: 1.384100	
+Instructions :15117		IPC: 1.511700	
+Instructions :10301		IPC: 1.030100	
+Instructions :10283		IPC: 1.028300	
+Instructions :9999		IPC: 0.999900	
+Instructions :10680		IPC: 1.068000	
+Instructions :9435		IPC: 0.943500	
+Instructions :10708		IPC: 1.070800	
+Instructions :10709		IPC: 1.070900	
+Instructions :13181		IPC: 1.318100	
+Instructions :11277		IPC: 1.127700	
+Instructions :15123		IPC: 1.512300	
+Instructions :14444		IPC: 1.444400	
+Instructions :13096		IPC: 1.309600	
+Instructions :10491		IPC: 1.049100	
+Instructions :11718		IPC: 1.171800	
+Instructions :12357		IPC: 1.235700	
+Instructions :13189		IPC: 1.318900	
+Instructions :13902		IPC: 1.390200	
+Instructions :14227		IPC: 1.422700	
+Instructions :14194		IPC: 1.419400	
+Instructions :11810		IPC: 1.181000	
+Instructions :11576		IPC: 1.157600	
+Instructions :11299		IPC: 1.129900	
+Instructions :11209		IPC: 1.120900	
+Instructions :11360		IPC: 1.136000	
+Instructions :12077		IPC: 1.207700	
+Instructions :12802		IPC: 1.280200	
+Instructions :11720		IPC: 1.172000	
+Instructions :11314		IPC: 1.131400	
+Instructions :12363		IPC: 1.236300	
+Instructions :12909		IPC: 1.290900	
+Instructions :10427		IPC: 1.042700	
+Instructions :11616		IPC: 1.161600	
+Instructions :14596		IPC: 1.459600	
+Instructions :11229		IPC: 1.122900	
+Instructions :14252		IPC: 1.425200	
+Instructions :13595		IPC: 1.359500	
+Instructions :12988		IPC: 1.298800	
+Instructions :12416		IPC: 1.241600	
+Instructions :11844		IPC: 1.184400	
+Instructions :12990		IPC: 1.299000	
+Instructions :13730		IPC: 1.373000	
+Instructions :12305		IPC: 1.230500	
+Instructions :12670		IPC: 1.267000	
+Instructions :11447		IPC: 1.144700	
+Instructions :11968		IPC: 1.196800	
+Instructions :11957		IPC: 1.195700	
+Instructions :8357		IPC: 0.835700	
+Instructions :8251		IPC: 0.825100	
+Instructions :10430		IPC: 1.043000	
+Instructions :7399		IPC: 0.739900	
+Instructions :7989		IPC: 0.798900	
+Instructions :9683		IPC: 0.968300	
+Instructions :12359		IPC: 1.235900	
+Instructions :10616		IPC: 1.061600	
+Instructions :15137		IPC: 1.513700	
+Instructions :12322		IPC: 1.232200	
+Instructions :9084		IPC: 0.908400	
+Instructions :12560		IPC: 1.256000	
+Instructions :10507		IPC: 1.050700	
+Instructions :13389		IPC: 1.338900	
+Instructions :14627		IPC: 1.462700	
+Instructions :11517		IPC: 1.151700	
+Instructions :13562		IPC: 1.356200	
+Instructions :14121		IPC: 1.412100	
+Instructions :12583		IPC: 1.258300	
+Instructions :14784		IPC: 1.478400	
+Instructions :11650		IPC: 1.165000	
+Instructions :9261		IPC: 0.926100	
+Instructions :11800		IPC: 1.180000	
+Instructions :10666		IPC: 1.066600	
+Instructions :10710		IPC: 1.071000	
+Instructions :12575		IPC: 1.257500	
+Instructions :15460		IPC: 1.546000	
+Instructions :13899		IPC: 1.389900	
+Instructions :11314		IPC: 1.131400	
+Instructions :10048		IPC: 1.004800	
+Instructions :13937		IPC: 1.393700	
+Instructions :14668		IPC: 1.466800	
+Instructions :7868		IPC: 0.786800	
+Instructions :10762		IPC: 1.076200	
+Instructions :11133		IPC: 1.113300	
+Instructions :10574		IPC: 1.057400	
+Instructions :11703		IPC: 1.170300	
+Instructions :13073		IPC: 1.307300	
+Instructions :14311		IPC: 1.431100	
+Instructions :14397		IPC: 1.439700	
+Instructions :12306		IPC: 1.230600	
+Instructions :12680		IPC: 1.268000	
+Instructions :13789		IPC: 1.378900	
+Instructions :14638		IPC: 1.463800	
+Instructions :14842		IPC: 1.484200	
+Instructions :11998		IPC: 1.199800	
+Instructions :11605		IPC: 1.160500	
+Instructions :13796		IPC: 1.379600	
+Instructions :14577		IPC: 1.457700	
+Instructions :14366		IPC: 1.436600	
+Instructions :12957		IPC: 1.295700	
+Instructions :12605		IPC: 1.260500	
+Instructions :12814		IPC: 1.281400	
+Instructions :11499		IPC: 1.149900	
+Instructions :14135		IPC: 1.413500	
+Instructions :12751		IPC: 1.275100	
+Instructions :13305		IPC: 1.330500	
+Instructions :8256		IPC: 0.825600	
+Instructions :10345		IPC: 1.034500	
+Instructions :10429		IPC: 1.042900	
+Instructions :10908		IPC: 1.090800	
+Instructions :11567		IPC: 1.156700	
+Instructions :14643		IPC: 1.464300	
+Instructions :11436		IPC: 1.143600	
+Instructions :15232		IPC: 1.523200	
+Instructions :12330		IPC: 1.233000	
+Instructions :14711		IPC: 1.471100	
+Instructions :12435		IPC: 1.243500	
+Instructions :12352		IPC: 1.235200	
+Instructions :9638		IPC: 0.963800	
+Instructions :8417		IPC: 0.841700	
+Instructions :9046		IPC: 0.904600	
+Instructions :8555		IPC: 0.855500	
+Instructions :10707		IPC: 1.070700	
+Instructions :7457		IPC: 0.745700	
+Instructions :10601		IPC: 1.060100	
+Instructions :8907		IPC: 0.890700	
+Instructions :11065		IPC: 1.106500	
+Instructions :9958		IPC: 0.995800	
+Instructions :9115		IPC: 0.911500	
+Instructions :13484		IPC: 1.348400	
+Instructions :13461		IPC: 1.346100	
+Instructions :9884		IPC: 0.988400	
+Instructions :12176		IPC: 1.217600	
+Instructions :12201		IPC: 1.220100	
+Instructions :10593		IPC: 1.059300	
+Instructions :11242		IPC: 1.124200	
+Instructions :9998		IPC: 0.999800	
+Instructions :11207		IPC: 1.120700	
+Instructions :11098		IPC: 1.109800	
+Instructions :11614		IPC: 1.161400	
+Instructions :13388		IPC: 1.338800	
+Instructions :13281		IPC: 1.328100	
+Instructions :12374		IPC: 1.237400	
+Instructions :10557		IPC: 1.055700	
+Instructions :11539		IPC: 1.153900	
+Instructions :10894		IPC: 1.089400	
+Instructions :11542		IPC: 1.154200	
+Instructions :10747		IPC: 1.074700	
+Instructions :11948		IPC: 1.194800	
+Instructions :11848		IPC: 1.184800	
+Instructions :12945		IPC: 1.294500	
+Instructions :12872		IPC: 1.287200	
+Instructions :12061		IPC: 1.206100	
+Instructions :13404		IPC: 1.340400	
+Instructions :13614		IPC: 1.361400	
+Instructions :12320		IPC: 1.232000	
+Instructions :12766		IPC: 1.276600	
+Instructions :12922		IPC: 1.292200	
+Instructions :11959		IPC: 1.195900	
+Instructions :12734		IPC: 1.273400	
+Instructions :12337		IPC: 1.233700	
+Instructions :10269		IPC: 1.026900	
+Instructions :10923		IPC: 1.092300	
+Instructions :11305		IPC: 1.130500	
+Instructions :12045		IPC: 1.204500	
+Instructions :12555		IPC: 1.255500	
+Instructions :11151		IPC: 1.115100	
+Instructions :9015		IPC: 0.901500	
+Instructions :12024		IPC: 1.202400	
+Instructions :13629		IPC: 1.362900	
+Instructions :14050		IPC: 1.405000	
+Instructions :13987		IPC: 1.398700	
+Instructions :12178		IPC: 1.217800	
+Instructions :12174		IPC: 1.217400	
+Instructions :12527		IPC: 1.252700	
+Instructions :11891		IPC: 1.189100	
+Instructions :11795		IPC: 1.179500	
+Instructions :11851		IPC: 1.185100	
+Instructions :13130		IPC: 1.313000	
+Instructions :13650		IPC: 1.365000	
+Instructions :11295		IPC: 1.129500	
+Instructions :8840		IPC: 0.884000	
+Instructions :10430		IPC: 1.043000	
+Instructions :11352		IPC: 1.135200	
+Instructions :14351		IPC: 1.435100	
+Instructions :15151		IPC: 1.515100	
+Instructions :11105		IPC: 1.110500	
+Instructions :13865		IPC: 1.386500	
+Instructions :12527		IPC: 1.252700	
+Instructions :10031		IPC: 1.003100	
+Instructions :12372		IPC: 1.237200	
+Instructions :10668		IPC: 1.066800	
+Instructions :13256		IPC: 1.325600	
+Instructions :12408		IPC: 1.240800	
+Instructions :11364		IPC: 1.136400	
+Instructions :11248		IPC: 1.124800	
+Instructions :12409		IPC: 1.240900	
+Instructions :10988		IPC: 1.098800	
+Instructions :11455		IPC: 1.145500	
+Instructions :13058		IPC: 1.305800	
+Instructions :14529		IPC: 1.452900	
+Instructions :14927		IPC: 1.492700	
+Instructions :14017		IPC: 1.401700	
+Instructions :12368		IPC: 1.236800	
+Instructions :13240		IPC: 1.324000	
+Instructions :13346		IPC: 1.334600	
+Instructions :12547		IPC: 1.254700	
+Instructions :12330		IPC: 1.233000	
+Instructions :11578		IPC: 1.157800	
+Instructions :13266		IPC: 1.326600	
+Instructions :13723		IPC: 1.372300	
+Instructions :11121		IPC: 1.112100	
+Instructions :10531		IPC: 1.053100	
+Instructions :11650		IPC: 1.165000	
+Instructions :11637		IPC: 1.163700	
+Instructions :13316		IPC: 1.331600	
+Instructions :14204		IPC: 1.420400	
+Instructions :13337		IPC: 1.333700	
+Instructions :13243		IPC: 1.324300	
+Instructions :12855		IPC: 1.285500	
+Instructions :11557		IPC: 1.155700	
+Instructions :11051		IPC: 1.105100	
+Instructions :10535		IPC: 1.053500	
+Instructions :10366		IPC: 1.036600	
+Instructions :12139		IPC: 1.213900	
+Instructions :13591		IPC: 1.359100	
+Instructions :11856		IPC: 1.185600	
+Instructions :12538		IPC: 1.253800	
+Instructions :12458		IPC: 1.245800	
+Instructions :11519		IPC: 1.151900	
+Instructions :11895		IPC: 1.189500	
+Instructions :13388		IPC: 1.338800	
+Instructions :14450		IPC: 1.445000	
+Instructions :14756		IPC: 1.475600	
+Instructions :13955		IPC: 1.395500	
+Instructions :12313		IPC: 1.231300	
+Instructions :11800		IPC: 1.180000	
+Instructions :12313		IPC: 1.231300	
+Instructions :13186		IPC: 1.318600	
+Instructions :12474		IPC: 1.247400	
+Instructions :12776		IPC: 1.277600	
+Instructions :12876		IPC: 1.287600	
+Instructions :12389		IPC: 1.238900	
+Instructions :13637		IPC: 1.363700	
+Instructions :11990		IPC: 1.199000	
+Instructions :10683		IPC: 1.068300	
+Instructions :11435		IPC: 1.143500	
+Instructions :11404		IPC: 1.140400	
+Instructions :11612		IPC: 1.161200	
+Instructions :12066		IPC: 1.206600	
+Instructions :12533		IPC: 1.253300	
+Instructions :12380		IPC: 1.238000	
+Instructions :13385		IPC: 1.338500	
+Instructions :13398		IPC: 1.339800	
+Instructions :11149		IPC: 1.114900	
+Instructions :12593		IPC: 1.259300	
+Instructions :12493		IPC: 1.249300	
+Instructions :11155		IPC: 1.115500	
+Instructions :11629		IPC: 1.162900	
+Instructions :10943		IPC: 1.094300	
+Instructions :12132		IPC: 1.213200	
+Instructions :11923		IPC: 1.192300	
+Instructions :12259		IPC: 1.225900	
+Instructions :10929		IPC: 1.092900	
+Instructions :13095		IPC: 1.309500	
+Instructions :13400		IPC: 1.340000	
+Instructions :12536		IPC: 1.253600	
+Instructions :11208		IPC: 1.120800	
+Instructions :13070		IPC: 1.307000	
+Instructions :12065		IPC: 1.206500	
+Instructions :10206		IPC: 1.020600	
+Instructions :11532		IPC: 1.153200	
+Instructions :8392		IPC: 0.839200	
+Instructions :10981		IPC: 1.098100	
+Instructions :9046		IPC: 0.904600	
+Instructions :10843		IPC: 1.084300	
+Instructions :10710		IPC: 1.071000	
+Instructions :10129		IPC: 1.012900	
+Instructions :11710		IPC: 1.171000	
+Instructions :12462		IPC: 1.246200	
+Instructions :12352		IPC: 1.235200	
+Instructions :11564		IPC: 1.156400	
+Instructions :12117		IPC: 1.211700	
+Instructions :10424		IPC: 1.042400	
+Instructions :11171		IPC: 1.117100	
+Instructions :9594		IPC: 0.959400	
+Instructions :11261		IPC: 1.126100	
+Instructions :11905		IPC: 1.190500	
+Instructions :12455		IPC: 1.245500	
+Instructions :11587		IPC: 1.158700	
+Instructions :12862		IPC: 1.286200	
+Instructions :12291		IPC: 1.229100	
+Instructions :13023		IPC: 1.302300	
+Instructions :11712		IPC: 1.171200	
+Instructions :10982		IPC: 1.098200	
+Instructions :10892		IPC: 1.089200	
+Instructions :12728		IPC: 1.272800	
+Instructions :14365		IPC: 1.436500	
+Instructions :12955		IPC: 1.295500	
+Instructions :12384		IPC: 1.238400	
+Instructions :11617		IPC: 1.161700	
+Instructions :9457		IPC: 0.945700	
+Instructions :9751		IPC: 0.975100	
+Instructions :11046		IPC: 1.104600	
+Instructions :10455		IPC: 1.045500	
+Instructions :11899		IPC: 1.189900	
+Instructions :10731		IPC: 1.073100	
+Instructions :11222		IPC: 1.122200	
+Instructions :14543		IPC: 1.454300	
+Instructions :13516		IPC: 1.351600	
+Instructions :12776		IPC: 1.277600	
+Instructions :12664		IPC: 1.266400	
+Instructions :10015		IPC: 1.001500	
+Instructions :10167		IPC: 1.016700	
+Instructions :11634		IPC: 1.163400	
+Instructions :11842		IPC: 1.184200	
+Instructions :12295		IPC: 1.229500	
+Instructions :14233		IPC: 1.423300	
+Instructions :14565		IPC: 1.456500	
+Instructions :12723		IPC: 1.272300	
+Instructions :12989		IPC: 1.298900	
+Instructions :12295		IPC: 1.229500	
+Instructions :9472		IPC: 0.947200	
+Instructions :14074		IPC: 1.407400	
+Instructions :11670		IPC: 1.167000	
+Instructions :12183		IPC: 1.218300	
+Instructions :12707		IPC: 1.270700	
+***** exiting (allinstructions) *****
+Contexts: 1  Fetch Width: 8
+No of useful instructions fetched: 10000030 (10.99% proc util.)
+No of total instructions fetched:  11854039 (13.03% proc util.)
+ includes 384129 misfetch (3.2%), 1469880 (12.4%) wrong-path fetches
+ and 0 non-WP flushed for failed lock and other (0.0%)
+No of useful instructions issued/executed: 10000071 (10.99% proc util.)
+No of total instructions issued/executed:  10540072 (11.59% proc util.)
+ includes 540001 wrong-path (5.1%) insts and 0 flushed (0.0%)
+    fp 125, 0.00%
+    synch 0, 0.00%
+    integer 7020277, 66.61%
+    load/store 3519670, 33.39%
+No of cycles taken: 11370779
+Parallelism [ 0.879,] = 0.879
+Core 0 scheduling stats
+  Avg pre-sched occupancy of IQ: 6.96 (21.74%), FQ: 0.00 (0.00%)
+  Rename IQ full cyc: 171861 (1.51%), FQ: 0 (0.00%)
+  Avg occupancy of I regs: 21.14 (33.04%), FP regs: 0.00 (0.00%)
+  Rename I regs full cyc: 0 (0.00%), FP regs: 0 (0.00%)
+  Avg occupancy of LSQ: 11.32 (47.16%)
+  Rename LSQ full cyc: 2915028 (25.64%)
+  Avg occupancy of alus IALUS: 0.62 (30.87%), FPALUS: 0.00 (0.00%), LDST: 0.31 (30.95%)
+  Issue conflicts, I unit: 9092202 (0.80), FP: 11 (0.00), LDST: 6055330 (0.53)
+  Issue conflicts, D-MSHR: 0 (0.00), mb: 2855 (0.00), wmb: 0 (0.00), mem: 2117259 (0.19)
+  Total conflicts (non-issued, ready insts): 14432681 (1.27)
+  Total conflict cyc buckets: 1248118 1547447 1274749 336019 412 0 0 0 0 0 0 0 0 0 0 0
+Context 0 scheduling stats
+  Avg occupancy of ROB: 27.12 (42.37%)
+  Fetch I-MSHR full: 0 (0.00%)
+  Rename ROB full cyc: 315296 (2.77%), fetch alist full cyc: 0 (0.00%)
+Commits: [ 10000000 ] = 10000000
+Syscalls: [ 21 ] = 21
+In-flight: [ 30 ] = 30
+App statistics
+  ID_order: [ 0 ]
+  insts: [ 21367365 ]
+  commits: [ 10000000 ]
+  discards: [ 1367335 ]
+  syscalls: [ 23 ]
+  total_cyc: [ 11370779 ]
+  sched_cyc: [ 11370739 ]
+  sched_count: [ 1 ]
+  commits/schedcyc: [ 0.879 ]
+  commits/totalcyc: [ 0.879 ]
+  icache_miss_pct: [ 0.93 ]
+  dcache_accesses: [ 3416801 ]
+  dcache_non-merged_miss_pct: [ 1.50 ]
+  l2cache_accesses: [ 68514 ]
+  l2cache_non-merged_miss_pct: [ 47.81 ]
+  l3cache_accesses: [ 32784 ]
+  l3cache_non-merged_miss_pct: [ 55.25 ]
+  mem_accesses: [ 18220 ]
+  itlb_miss_pct: [ 0.00 ]
+  dtlb_miss_pct: [ 0.07 ]
+  bpred_miss_pct: [ 11.59 ]
+  retpred_miss_pct: [ 0.01 ]
+  avg_mem_delay_cyc: [ 11.0 ]
+  instq_conf_cyc/schedcyc_pct: [ 1.51 ]
+  long_mem_detected: [ 19990 ]
+  long_mem_flushed: [ 0 ]
+Cache Statistics
+Core 0:
+  Reads: 5205856   Writes: 792431
+  Hit times (excluding exec) from: L1=2, L2=14, L3=43, M=313
+  Ideal est. transfer bandwidth (bytes/cyc * banks * ports):
+          part    access     wb-to      fill
+           L1I        16        na       256
+           L1D        32        na       256
+            L2       256       256       256
+           Bus         8        na        32
+            L3        64        64        64
+           Mem     10.24     10.24        na
+  ICACHE: size: 64 KB assoc: 2
+  ICACHE: hits: 2557455 misses: 24031  Hit Ratio: 99.07%
+  ICACHE: coher misses: 0 invalidates: 0
+          wbfull_confs: 0
+  DCACHE: size: 64 KB assoc: 2
+  DCACHE: hits: 3365690 misses: 51111 writebacks: 29669  Hit Ratio: 98.50%
+  DCACHE: coher misses: 0 upgrade misses: 0
+          coher writebacks: 0 invalidates: 0
+          wbfull_confs: 0 coher_busy: 0 
+  SCACHE: size: 256 KB assoc: 8
+  SCACHE: hits: 41260 misses: 33882 writebacks: 26712  Hit Ratio: 54.91%
+  SCACHE: coher misses: 0 upgrade misses: 0 
+          coher writebacks: 0 invalidates: 0
+          wbfull_confs: 0 coher_busy: 0
+  Stalls for L2 MSHR conflicts: 0
+  ITLB: size: 48, misses 38, miss rate 0.00
+  DTLB: size: 128, misses 1689, miss rate 0.05
+  icache bank util. 0.057 0.072 0.062 0.059 0.066 0.044 0.046 0.052 
+  dcache bank util. 0.051 0.070 0.072 0.070 0.111 0.103 0.070 0.081 
+  L2 bank util. 0.003 0.004 0.003 0.003 0.003 0.003 0.003 0.004 
+Stall for miss queue full 0 cycles (0.00%)
+3CACHE: size: 4096 KB assoc: 16
+3CACHE: hits: 14955 misses: 18927  writebacks: 0  Hit Ratio: 44.14%
+3CACHE: wbfull_confs: 0
+avg mem delay 11.036
+Unified bus: 94600 xfers, 0 syncs, 11215461 idle_cyc, 0 sync_cyc, 0.014 util
+L3 util. = 0.007
+MemUnit stats: 18927 reads, 0 writes
+MemUnit bank util: 0.010 0.011 0.010 0.010 0.010 0.011 0.011 0.011 0.010 0.011 0.010 0.010 0.010 0.010 0.010 0.010
+Core 0:
+  branch prediction, hits = 688182, misses = 90257, hit rate = 88.41%
+  jump prediction, hits = 889551, misses = 140072, hit rate = 86.40%
+  return_stack prediction, hits = 196259, misses = 10, hit rate = 99.99%
+Commit group stats:
+  started 0, inflight 0, squashed 0, aborted 0, committed 0 (-nan% of started, -nan% of not-squashed)
+  blocked cyc/mean: [ 0/-nan ]
+GlobalAppMgr stats:
+  App state/cycle breakdown:
+    "cyc","ctx_run","ctx_stalled","ready","swapping","waiting"
+    "A0",8008084,3362656,0,39,0
+  App occupancy cycles on cores:
+    "cyc","C0"
+    "A0",11370779
+  App swap-ins on cores:
+    "events","C0"
+    "A0",1
+  Core "scheduled - stalled" TLP cycles:
+    "cyc",0,1
+    "C0",3362656,8008123
+  Core scheduled TLP cycles:
+    "cyc",0,1
+    "C0",0,11370779
+  App same-core fraction: [ -nan ]
+  App mean swapped-in cyc: [ 11370779 ]
+  App scheduled IPC: [ 0.879 ]
+  App L1D blocks on cores:
+    "blocks","C0"
+    "A0",1024
+  App L2 blocks on cores:
+    "blocks","C0"
+    "A0",4096
+  App L3 blocks: [ 18927 ]
+  App activate/deactivate timing stats:
+    A0
+      deact_halt: - (n=0)
+      deact_swapout: - (n=0)
+      deact_sum: - (n=0)
+      activ_fetch: 39/39/39 (n=1,sd=0)
+      activ_commit: 39/39/39 (n=1,sd=0)
+      migrate_fetch: - (n=0)
+      migrate_commit: - (n=0)
+GlobalAdaptMgr Stats:
+  last_occupancy_per_ctx
+    ROB   30 
+    IQ    21 
+    FQ    0 
+    IREG  29 
+    FREG  0 
+    LSQ   6 
+  max_occupancy_per_ctx
+    ROB   64 
+    IQ    32 
+    FQ    7 
+    IREG  64 
+    FREG  31 
+    LSQ   24 
+  resource_size_per_ctx
+    ROB   48 
+    IQ    24 
+    FQ    24 
+    IREG  48 
+    FREG  48 
+    LSQ   18 
+total IPC 10000030/11370779 = 0.879
+
+--Sim'd 1.137e+07 cyc, 1.000e+07 insts in 14.44/0.01200/14.61(98.90%) sec
+--Sim rate: 7.875e+05 cyc/s, 6.925e+05 inst/s
+--Total run time: 14.85/0.01200/15.02(98.91%) sec
